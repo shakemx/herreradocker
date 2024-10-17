@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+<!--SEO-->
+{% block title %}Herrera & García | Planeación Financiera{% endblock title %}
+{% block description %}Somos profesionales especializados en Consultoría Financiera y de Seguros, te ofrecemos soluciones ideales para tu protección y la de tu familia para que vivas tranquilo.{% endblock description %}
+{% block titleop %}Herrera & García | Planeación Financiera{% endblock titleop %}
+{% block description_op %}Somos profesionales especializados en Consultoría Financiera y de Seguros, te ofrecemos soluciones ideales para tu protección y la de tu familia para que vivas tranquilo.{% endblock description_op %}
+{% block image_op %}{% static 'img/favicon.png' %}{% endblock image_op %}
+{% block favicon %}{% static 'img/favicon.png' %}{% endblock favicon%}
+<!--Body-->
+{% block main_body_data %}
+    {% include "navbar.html" %}
+    <!----------------START HOMME---------------------->
+    {% include "carousel.html" %}
+    {% include "about.html" %}
+    <br>
+    {% include "cta1.html" %}
+    <br>
+    {% include "brand.html" %}
+    <br>
+    {% include "favs.html" %}
+    <br>
+    {% include "faqs.html" %}
+    <br>
+    {% include "testimonials.html" %}
+    
+    <!----------------END HOME---------------------->
+    {% include "flotantes.html" %}
+    {% include "footer.html" %}
+    {% include "copyright.html" %}
+{% endblock %}
+
+
+<!--JS-->
+{% block child_js_above_files %} 
+{% endblock %}
+
+{% block child_js_below_files %} 
+{% endblock %}

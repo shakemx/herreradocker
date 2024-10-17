@@ -1,0 +1,27 @@
+{% load static %}
+
+<!-- CARD -->
+<section id="card">
+   <div class="container color-texto py-3 py-md-3">
+        <div class="row align-items-center">
+            {% if productsInsurance %}
+            {% for pro in productsInsurance  %}
+            <div class="col-12 col-md-6 col-lg-4 mx-auto">
+               <a href="{% url 'product' slug_type=pro.category.type.slug_type slug_category=pro.category.slug_category slug_product=pro.slug_product %}" > 
+                <div class="card bg-card my-3">                    
+                    <div class="card-body bg-secundario mt-3" >
+                        <img src="{{MEDIA_URL}}{{pro.image}}" alt="{{pro.name}}" class="imagen-card card-img-top">
+                        <h3 class="card-text text-center mt-3" style="height: 75px">{{pro.name}}</h3>
+                    </div>
+                </div>
+               </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-12 text-center">
+                <h3>No hay productos para mostrar...vuelve pronto</h3>
+            </div>
+            {% endif %}
+        </div>
+   </div>
+</section>

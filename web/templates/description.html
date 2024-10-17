@@ -1,0 +1,126 @@
+{% load static %}
+
+<section id="description">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>{{product.name}}</h3>
+                <h6 class="color-acento text-center ">
+                    <a href="https://api.whatsapp.com/send?text=Hole+este+producto+te+puede+interesar+https://herrera-garcia.com/portafolio/{{product.category.type.slug_type}}/{{product.category.slug_category}}/{{product.slug_product}}" target="_blank">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    Compartir
+                    </a>
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-12 align-self-center">
+                <img src="{{MEDIA_URL}}{{product.image_2}}" alt="{{product.name}}" class="imagen-description">
+            </div>
+            <div class="col-lg-6 col-12 ">
+                {% if product.definicion %}
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <i class="fa-solid fa-circle-question color-acento fa-lg" style="width: 30px;"></i>
+                        <h4 class="d-inline antonio">¿Qué es?</h4>
+                    </div>
+                    <div class="col-12 my-1">
+                        <p class="color-texto">{{product.definicion}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% if product.caracteristicas %}
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <i class="fa-solid fa-clipboard-check color-acento fa-lg" style="width: 30px;"></i>
+                        <h4 class="d-inline antonio">Características</h4>
+                    </div>
+                    <div class="col-12 my-1">
+                        <p class="color-texto">{{product.caracteristicas}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% if product.beneficio %}
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <i class="fa-solid fa-thumbs-up color-acento fa-lg" style="width: 30px;"></i>
+                        <h4 class="d-inline antonio">Beneficios</h4>
+                    </div>
+                    <div class="col-12 my-1">
+                        <p class="color-texto">{{product.beneficio}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% if product.elegibilidad %}
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <i class="fa-solid fa-user-check color-acento fa-lg" style="width: 30px;"></i>
+                        <h4 class="d-inline antonio">Condiciones de Contratación</h4>
+                    </div>
+                    <div class="col-12 my-1">
+                        <p class="color-texto">{{product.elegibilidad}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% if product.adicionales %}
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <i class="fa-solid fa-plus color-acento fa-lg" style="width: 30px;"></i>
+                        <h4 class="d-inline antonio">Adicionales</h4>
+                    </div>
+                    <div class="col-12 my-1">
+                        <p class="color-texto">{{product.adicionales}}</p>
+                    </div>
+                </div>
+                {% endif %}
+                {% if product.exepciones %}
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <i class="fa-solid fa-triangle-exclamation color-acento fa-lg" style="width: 30px;"></i>
+                        <h4 class="d-inline antonio">Excepciones</h4>
+                    </div>
+                    <div class="col-12 my-1">
+                        <p class="color-texto">{{product.exepciones}}</p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button 
+                href="https://wa.me/5217352001378?text=Hola%20Herrera%20García"
+                target="_blank"
+                class="color-primario bg-acento cuadro">
+                    Cotizar Ahora
+                </button>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row align-items-center bg-secundario">
+            <div class="col-6 text-center">
+                <h5 class="p-0 m-0 color-primario antonio">
+                    <strong
+                      >No dejes pendiente la seguridad y protección que te mereces,
+                      contacta ahora directo con un asesor
+                    </strong>
+                </h5>
+            </div>
+            <div class="col-6 text-center">
+                <img src="{% static 'img/isotipo.png' %}" alt="Hola Prueba" class="imagen-logo card-img-top">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-12">
+                <h6 class="color-acento text-center ">
+                    <a href="https://api.whatsapp.com/send?text=Hole+este+producto+te+puede+interesar+https://herrera-garcia.com/portafolio/{{product.category.type.slug_type}}/{{product.category.slug_category}}/{{product.slug_product}}" target="_blank">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    Compartir
+                    </a>
+                </h6>
+            </div>
+        </div>
+    </div>
+</section>

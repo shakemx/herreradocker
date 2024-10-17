@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+<!--SEO-->
+{% block title %}{{insurance.name}}{% endblock title %}
+{% block description %}{{insurance.description}}{% endblock description %}
+{% block titleop %}{{insurance.name}}{% endblock titleop %}
+{% block description_op %}{{insurance.description}}{% endblock description_op %}
+{% block image_op %}{% static 'img/favicon.png' %}{% endblock image_op %}
+{% block favicon %}{% static 'img/favicon.png' %}{% endblock favicon%}
+<!--Body-->
+{% block main_body_data %}
+    {% include "navbar.html" %}
+    <!----------------START HOMME---------------------->
+    {% include "carousel_creditos.html" %}
+    {% include "insurance_products.html" %}
+    {% include "card.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% include "cta1.html" %}
+    <!----------------END HOME---------------------->
+    {% include "flotantes.html" %}
+    {% include "footer.html" %}
+    {% include "copyright.html" %}
+{% endblock %}
+
+
+<!--JS-->
+{% block child_js_above_files %} 
+{% endblock %}
+
+{% block child_js_below_files %} 
+{% endblock %}

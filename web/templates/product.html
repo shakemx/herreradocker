@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+<!--SEO-->
+{% block title %}{{product.name}}{% endblock title %}
+{% block description %}{{product.definicion}}{% endblock description %}
+{% block titleop %}{{product.name}}{% endblock titleop %}
+{% block description_op %}{{product.definicion}}{% endblock description_op %}
+{% block image_op %}{% static 'img/favicon.png' %}{% endblock image_op %}
+{% block favicon %}{% static 'img/favicon.png' %}{% endblock favicon%}
+<!--Body-->
+{% block main_body_data %}
+    {% include "navbar.html" %}
+    <!----------------START HOMME---------------------->
+    {% include "description.html" %}
+    <br>
+    <br>
+    <br>
+    <!----------------END HOME---------------------->
+    {% include "flotantes.html" %}
+    {% include "footer.html" %}
+    {% include "copyright.html" %}
+{% endblock %}
+
+
+<!--JS-->
+{% block child_js_above_files %} 
+{% endblock %}
+
+{% block child_js_below_files %} 
+{% endblock %}

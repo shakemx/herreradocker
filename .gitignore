@@ -1,0 +1,16 @@
+*.pyc
+.idea/
+*.mp4
+*.png
+staticfiles
+media
+*.jpg
+*.jpeg
+*.pyc
+.DS_Store
+
+
+.env
+.ds_store
+
+```

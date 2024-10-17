@@ -1,0 +1,46 @@
+{% load static %}
+
+<!-- CARROUSEL -->
+<section id="carrousel">
+   {%if products%}
+   <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carouselHero">
+      <div class="carousel-indicators line-down">
+         {% regroup products by category.type as type_list %}
+         {% for type in type_list  %}     
+         <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="{{forloop.counter0}}" {% if forloop.counter0 == 0 %}class="active" aria-current="true"{% endif %} aria-label="Slide {{forloop.counter0}}"></button>
+         {% endfor %}
+      </div>
+      <div class="carousel-inner"> 
+         {% for product in products  %}    
+         <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+            <!-- IMAGEN HERO--> 
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-12 p-0  hero">
+                     <img src="{{ product.category.type.cover }}" alt="{{ product.category.type.name }}"
+                        class="img-hero">
+                  </div>
+                  <div class="bg-caja">
+                        <h3 class="marca">{{ product.category.type.name }}</h3>
+                        <h1>{{product.category.type.lead}} </h1>
+                        <h4 class="d-none d-sm-block">
+                           {{product.category.type.description}}
+                        </h4>
+                        <a href="{% url 'insurance' slug_type=product.category.type.slug_type %}">
+                           <button class="color-primario bg-acento cuadro">
+                              Leer más...
+                           </button>
+                        </a>
+                  </div>                    
+                  <br>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+   </div>
+   {% else %}
+   
+   {% endif %}
+</section>

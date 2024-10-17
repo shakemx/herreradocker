@@ -1,0 +1,67 @@
+{% load static %}
+
+<!-- BANNER LG -->
+
+<section id="banner-lg">
+    <div class="btn-group w-100 fill" role="group" aria-label="Seguros Favoritos">
+        {% for fav in favs %}
+            {% if favs|length == 1 %}
+            <button class="columna-lg cl1">
+                <i class="fa-solid fa-piggy-bank fa-6x" style="color: #fffffe;"></i>
+                <br>
+                <br>
+                <h2>{{fav.name}}</h2>
+                <h3>{{fav.definicion}}</h3>
+                <a href="#">
+                    <h5 class="d-inline-block derecha">Lo quiero</h5>
+                </a>
+            </button>
+        {% elif favs|length == 2 %}
+            <button class="columna-lg cl2">
+                <i class="fa-solid fa-piggy-bank fa-6x" style="color: #fffffe;"></i>
+                <br>
+                <br>
+                <h2>{{fav.name}}</h2>
+                <h3>{{fav.definicion}}</h3>
+                <a href="#">
+                    <h5 class="d-inline-block derecha">Lo quiero</h5>
+                </a>
+            </button>
+            {% elif favs|length == 3 %}
+            <button class="columna-lg cl3">
+                <i class="fa-solid fa-piggy-bank fa-6x" style="color: #fffffe;"></i>
+                <br>
+                <br>
+                <h2>{{fav.name}}</h2>
+                <h3>{{fav.definicion}}</h3>
+                <a href="#">
+                    <h5 class="d-inline-block derecha">Lo quiero</h5>
+                </a>
+            </button>
+            {% elif favs|length == 4 %}
+            <button class="columna-lg cl4">
+                <i class="fa-solid fa-piggy-bank fa-6x" style="color: #fffffe;"></i>
+                <br>
+                <br>
+                <h2>{{fav.name}}</h2>
+                <h3>{{fav.definicion}}</h3>
+                <a href="#">
+                    <h5 class="d-inline-block derecha">Lo quiero</h5>
+                </a>
+            </button>
+            {% elif favs|length == 5 %}
+            <button class="columna-lg cl5">
+                <i class="fa-solid fa-piggy-bank fa-6x" style="color: #fffffe;"></i>
+                <br>
+                <br>
+                <h2>{{fav.name}}</h2>
+                <h3>{{fav.definicion}}</h3>
+                <a href="#">
+                    <h5 class="d-inline-block derecha">Lo quiero</h5>
+                </a>
+            </button>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+</section>

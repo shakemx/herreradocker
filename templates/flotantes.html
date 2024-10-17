@@ -1,0 +1,31 @@
+<section id="flotantes">
+    {% for empresa in empresas %}        
+    <div class="flotante">
+        {% if request.user_agent.os.family == 'iOS' and request.user_agent.is_mobile    %}
+            <a href="https://apps.apple.com/mx/app/mi-seguros/id1473875679 " target="_blank">
+                <i class="fa-solid fa-mobile  color-primario bg-acento p-2 my-1 cuadro logo-flotante"></i>
+            </a>
+        {% else %} 
+            <a href="https://play.google.com/store/apps/details?id=com.sicasonline.miseguros" target="_blank">
+                <i class="fa-solid fa-mobile  color-primario bg-acento p-2 my-1 cuadro logo-flotante"></i>
+            </a>
+        {% endif %}
+        <br>
+        <a href="tel:{{empresa.telefono}}" target="_blank">
+            <i class="fa-solid fa-phone  color-primario bg-acento p-2 my-1 cuadro logo-flotante"></i>
+        </a>
+        <br>
+        <a href="https://finanzashyg.setmore.com/bookappointment" target="_blank">
+            <i class="fa-solid fa-mug-hot  color-primario bg-acento p-2 my-1 cuadro logo-flotante"></i>
+        </a>
+        <br>
+        <a href="https://wa.me/521{{empresa.movil}}?text=Hola%20" target="_blank">
+            <i class="fa-brands fa-whatsapp color-primario bg-acento p-2 my-1 cuadro logo-flotante"></i>
+        </a>
+        <br>
+        <a href="{{ empresa.facebook }}" target="_blank">
+            <i class="fa-brands fa-facebook-f color-primario bg-acento p-2 my-1 cuadro logo-flotante"></i>
+        </a>
+    </div>
+    {% endfor %}
+</section>

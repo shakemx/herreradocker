@@ -1,0 +1,108 @@
+{% load static %}
+<section id="footer">
+    <div class="container bg-primario color-secundario">
+        <div class="row justify-content-between">
+            <div class="col-12 col-lg-6">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-5 my-3">
+                        <div class="text-center text-md-start">                               
+                            <img src="{% static 'img/isotipo.png' %}" alt="Herrera & García | Consultores Patrimoniales" class="navLogo"/>
+                        </div>
+                        <br>
+                        <h5 class="color-texto">
+                            Asesores Financieros y Patrimoniales. Profesionales en Seguros
+                            para Personas Individual-Colectivo-Especiales; Empresas
+                            Activos-Personal; Banca; Créditos Hipotecario-PYME; Inversión
+                            Patrimonial.
+                        </h5>
+                    </div>
+                    <div class="col-12 col-md-5 my-2">
+                        <div>
+                            <h3 class="text-center text-md-start">Contacto</h3>
+                        </div>
+                        <br>
+                        <div class="my-2">
+                            <a href="tel:527352001378" target="_blank">
+                                <i class="fas fa-phone-alt" style="color: #3da9fc; width: 1.5rem;"></i>
+                                <h5 class="color-texto d-inline">735 200 1378</h5>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                            <a href="https://finanzashyg.setmore.com/bookappointment" target="_blank">
+                                <i class="fa-solid fa-mug-hot" style="color: #3da9fc; width: 1.5rem"></i>
+                                <h5 class="color-texto d-inline">Programar Reunión</h5>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                            <a href="https://wa.me/5217352001378?text=Hola%20" target="_blank">
+                                <i class="fa-brands fa-whatsapp" style="color: #3da9fc; width: 1.5rem"></i>
+                                <h5 class="color-texto d-inline">735 200 1378</h5>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                            <a href="https://www.facebook.com/FinanzasHyG" target="_blank">
+                                <i class="fa-brands fa-facebook-f" style="color: #3da9fc; width: 1.5rem"></i>
+                                <h5 class="color-texto d-inline">FinanzasHyG</h5>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                            <a href="mailto:hola@herrera-garcia.com" target="_blank">
+                                <i class="fa-solid fa-envelope" style="color: #3da9fc; width: 1.5rem;"></i>
+                                <h5 class="color-texto d-inline">hola@herrera-garcia.com</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-5">
+                        <div>
+                            <h3 class="text-center text-md-start">Portafolio</h3>
+                        </div>
+                        <br>
+                        {% regroup products by category.type as type_list %}
+                        {% for type in type_list  %}       
+                        <div class="my-2">
+                            <a href="#" target="_blank">
+                                <h5 class="color-texto d-inline ms-3"> {{ type.grouper }}</h5>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <div>
+                            <h3 class="text-center text-md-start">Menú</h3>
+                        </div>
+                        <br>
+                        <h5 class="color-texto">
+                            <ul>
+                                <li class="hg">
+                                    Inicio
+                                </li>
+                                <li class="hg">
+                                    Nosotros
+                                </li>
+                                <li class="hg">
+                                    Alianzas
+                                </li>
+                                <li class="hg">
+                                    Favoritos
+                                </li>
+                                <li class="hg">
+                                    Preguntas Frecuentes
+                                </li>
+                                <li class="hg">
+                                    Testimonios
+                                </li>
+                                <li class="hg">
+                                    Agentes
+                                </li>
+                            </ul>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
