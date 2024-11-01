@@ -93,11 +93,11 @@ if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': environ['DATABASE_NAME_DEV'],
-            'USER': environ['DATABASE_USER_DEV'],
+            'NAME': environ['DATABASE_NAME'],
+            'USER': environ['DATABASE_USER'],
             'PASSWORD': environ['DATABASE_PASSWORD_DEV'],
-            'HOST': environ['DATABASE_HOST_DEV'],
-            'PORT': environ['DATABASE_PORT_DEV'],
+            'HOST': environ['DATABASE_HOST'],
+            'PORT': environ['DATABASE_PORT'],
         }
     }
 else:
@@ -105,11 +105,11 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': environ['DATABASE_NAME_DEV'],
-            'USER': environ['DATABASE_USER_DEV'],
+            'NAME': environ['DATABASE_NAME'],
+            'USER': environ['DATABASE_USER'],
             'PASSWORD': environ['DATABASE_PASSWORD_DEV'],
-            'HOST': environ['DATABASE_HOST_DEV'],
-            'PORT': environ['DATABASE_PORT_DEV'],
+            'HOST': environ['DATABASE_HOST'],
+            'PORT': environ['DATABASE_PORT'],
         }
     }
 
