@@ -39,7 +39,7 @@ jobs:
       -
         name: Build Docker Image
         run:
-          docker build  -t ${{ vars.APP_NAME }}:latest .
+          docker build -t ${{ vars.APP_NAME }}:latest .
           docker save ${{ vars.APP_NAME }}:latest > ${{ vars.APP_NAME }}.tar
           chmod 664 ${{ vars.APP_NAME }}.tar
       -
