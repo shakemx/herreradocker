@@ -39,8 +39,8 @@ jobs:
       -
         name: Build Docker Image
         run:
-          docker build  -t ${{ vars.DOCKERHUB_USERNAME }}/:latest .
-          docker save ${{ vars.DOCKERHUB_USERNAME }}/:latest > ${{ vars.DOCKERHUB_USERNAME }}.tar
+          docker build  -t ${{ vars.DOCKERHUB_USERNAME }}:latest .
+          docker save ${{ vars.DOCKERHUB_USERNAME }}:latest > ${{ vars.DOCKERHUB_USERNAME }}.tar
           chmod 664 ${{ vars.DOCKERHUB_USERNAME }}.tar
       -
         name: Transfer Docker image to VPS
