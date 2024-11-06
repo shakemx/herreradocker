@@ -33,15 +33,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Deploy
+        name: Checkout
+        uses: actions/checkout@v2
+
+      -
+        name: Build Docker Image
+        run:
+          docker build  -t ${{ vars.DOCKERHUB_USERNAME }}/:latest .
+          docker save ${{ vars.DOCKERHUB_USERNAME }}/:latest > ${{ vars.DOCKERHUB_USERNAME }}.tar
+          chmod 664 ${{ vars.DOCKERHUB_USERNAME }}.tar
+      -
+        name: Transfer Docker image to VPS
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST_HG }}
+          username: ${{ secrets.SSH_USERNAME_HG }}
+          key: ${{ secrets.SSH_KEY_HG }}
+          port: ${{ secrets.SSH_PORT_HG }}
+          source: ${{ vars.DOCKERHUB_USERNAME }}.tar
+          target: "/tmp"
+      - 
+        name: Load Docker image on VPS
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST_HG }}
           username: ${{ secrets.SSH_USERNAME_HG }}
-          password: ${{ secrets.SSH_PASSWORD_HG }}
+          key: ${{ secrets.SSH_KEY_HG }}
+          port: ${{ secrets.SSH_PORT_HG }}
           script: |
-            cd /home/ubuntu
-            docker login -u ${{ vars.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+            docker load -i /tmp/${{ vars.DOCKERHUB_USERNAME }}.tar
+            docker stop ${{ vars.DOCKERHUB_USERNAME }} || true
+            docker rm ${{ vars.DOCKERHUB_USERNAME }} || true
+            docker run -d -p ${{ secrets.SSH_PORT_HG }} --name ${{ vars.DOCKERHUB_USERNAME }} ${{ vars.DOCKERHUB_USERNAME }}:latest
+           
+
 
 
 
