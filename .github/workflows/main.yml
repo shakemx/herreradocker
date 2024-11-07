@@ -36,38 +36,32 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
 
-      -
-        name: Build Docker Image
-        run:
-          docker build -t ${{ vars.APP_NAME }}:latest .
-          docker save ${{ vars.APP_NAME }}:latest > ${{ vars.APP_NAME }}.tar
-          chmod 664 ${{ vars.APP_NAME }}.tar
-      -
+      - 
+        name: Build Docker image
+        run: docker build -t ${{ vars.DOCKERHUB_USERNAME }}/git:latest .
+             docker save -o image.tar ${{ vars.DOCKERHUB_USERNAME }}/git:latest
+             chmod 777 image.tar
+
+      - 
         name: Transfer Docker image to VPS
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.SSH_HOST_HG }}
-          username: ${{ secrets.SSH_USERNAME_HG }}
-          key: ${{ secrets.SSH_KEY_HG }}
-          port: ${{ secrets.SSH_PORT_HG }}
-          source: ${{ vars.APP_NAME }}.tar
-          target: "/tmp"
-      - 
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          source: image.tar
+          target: /home/${{ secrets.VPS_USERNAME }}/image.tar
+
+      -
         name: Load Docker image on VPS
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST_HG }}
-          username: ${{ secrets.SSH_USERNAME_HG }}
-          key: ${{ secrets.SSH_KEY_HG }}
-          port: ${{ secrets.SSH_PORT_HG }}
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_KEY }}
+          port: ${{ secrets.VPS_PORT }}
           script: |
-            docker load -i /tmp/${{ vars.herreradocker }}.tar
-            docker stop ${{ vars.herreradocker }} || true
-            docker rm ${{ vars.herreradocker }} || true
-            docker run -d -p ${{ secrets.SSH_PORT_HG }} --name ${{ vars.herreradocker }} ${{ vars.herreradocker }}:latest
-           
-
-
-
-
+            docker load -i /home/${{ secrets.VPS_USERNAME }}/image.tar
+            docker run -d -p 8000:8000 ${{ vars.DOCKERHUB_USERNAME }}/git:latest
 
