@@ -35,6 +35,7 @@ else:
     ALLOWED_HOSTS = [environ['HOST'], ]
 
 SECURE_SSL_REDIRECT=False
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 
 # Application definition
