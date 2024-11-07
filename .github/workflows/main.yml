@@ -42,6 +42,7 @@ jobs:
           host: ${{ secrets.SSH_HOST_HG }}
           username: ${{ secrets.SSH_USERNAME_HG }}
           key: ${{ secrets.SSH_KEY_HG }}
+          source: "${{ vars.DOCKERHUB_USERNAME }}.tar"
           target: "/home/hg"
 
 
