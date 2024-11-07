@@ -36,8 +36,13 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
-        name: Build Docker Image
-        run: docker-compose up  --build  
+        name: Transfer Docker image to VPS
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST_HG }}
+          username: ${{ secrets.SSH_USERNAME_HG }}
+          key: ${{ secrets.SSH_KEY_HG }}
+          target: "/home/hg"
 
 
 
