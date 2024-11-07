@@ -1,0 +1,1119 @@
+//--------------------------
+// BASE STYLES
+//--------------------------
+
+$primario: #fffffe;
+$secundario: #050a30;
+$terciario: #ef4565;
+$cuarto: #d8eefe;
+$texto: #5f6c7b;
+$acento: #3da9fc;
+$acento-sombra: #0086d6;
+$fondo: #d8eefe;
+@font-face {
+  font-family: "Antonio-Lght";
+  src: local("Antonio-Light"),
+    url("../fonts/Antonio-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Kelson-Sans-Regular";
+  src: local("Kelson-Sans-Regular"),
+    url("../fonts/Kelson-Sans-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "TTMilksScript-Regular";
+  src: local("TTMilksScript-Regular"),
+    url("../fonts/TTMilksScript-Regular.otf") format("opentype");
+}
+
+//---------------------------------------
+// BODY STYLES
+//---------------------------------------
+
+body {
+  font-family: "Kelson-Sans-Regular", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+.antonio {
+  font-family: "Antonio-Lght";
+}
+
+.kelson {
+  font-family: "Kelson-Sans-Regular";
+}
+
+.milk {
+  font-family: "TTMilksScript-Regular";
+}
+
+html {
+  font-size: 14px;
+}
+body {
+  background-color: $primario;
+}
+
+.navLogo {
+  max-width: 75px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 5px;
+}
+
+li {
+  margin-top: 0.5rem;
+}
+
+
+//--------------------------
+// COLOR COLORS
+//--------------------------
+
+.color-primario {
+  color: $primario !important;
+}
+
+.color-secundario {
+  color: $secundario !important;
+}
+
+.color-terciario {
+  color: $terciario !important;
+}
+
+.color-cuart {
+  color: $cuarto !important;
+}
+
+.color-texto {
+  color: $texto !important;
+}
+
+.color-acento {
+  color: $acento !important;
+}
+
+.color-fondo {
+  background-color: $fondo !important;
+}
+
+.bg-primario {
+  background-color: $primario !important;
+}
+
+.bg-secundario {
+  background-color: $secundario !important;
+}
+
+.bg-terciario {
+  background-color: $terciario !important;
+}
+
+.bg-cuarto {
+  background-color: $cuarto !important;
+}
+
+.bg-texto {
+  background-color: $texto !important;
+}
+
+.bg-acento {
+  background-color: $acento !important;
+}
+
+.bg-fondo {
+  background-color: $fondo !important;
+}
+
+.bg-filter {
+  backdrop-filter: saturate(200%) blur(20px);
+  background-color: rgba($color: white, $alpha: 0.9);
+  box-shadow: darken($color: white, $amount: 10%);
+  min-height: 75px;
+}
+
+.cuadro {
+  width: 75%;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: bold;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.cuadro:hover {
+  background-color: $acento;
+  color: $texto;
+}
+
+//--------------------------
+// NAVBAR
+//--------------------------
+#navbar {
+
+ .offcanvas-body {
+    flex-grow: 0!important;
+ }
+  .dropdown-menu.show {
+    width: 100%;
+  }
+  .bg-dark {
+    background-color: $fondo !important;
+  }
+  .text-dark {
+    color: $secundario !important;
+  }
+  .bg-light {
+    background-color: $secundario !important;
+  }
+  .text-light {
+    color: $primario !important;
+  }
+
+  p {
+    opacity: 0.5;
+  }
+
+  a {
+    color: $texto !important;
+  }
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("../img/menu.png") !important;
+    border-color: transparent !important;
+    border: none !important;
+  }
+
+  .navbar-toggler:focus {
+    border-color: transparent !important;
+    border: none !important;
+    box-shadow: transparent !important;
+  }
+  .navbar-light .navbar-toggler {
+    color: transparent !important;
+    border-color: transparent !important;
+    border: none !important;
+  }
+  .b-sidebar {
+    width: 50%;
+  }
+  @media only screen and (min-width: 768px) {
+    .b-sidebar {
+      width: 25%;
+    }
+  }
+  @media only screen and (min-width: 960px) {
+    .b-sidebar {
+      width: 20%;
+    }
+  }
+  .banner {
+    height: 50px;
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  @media only screen and (max-width: 575px) {
+    .banner {
+      height: 60px;
+    }
+  }
+
+  .espacio {
+    width: 2.5rem !important;
+  }
+
+  .dropdown-menu {
+    background-color: $secundario !important;
+
+    a {
+      color: $fondo !important;
+    }
+
+    .offcanvas-backdrop {
+      background-color: $fondo !important;
+    }
+  }
+
+  .dropdown-item:hover {
+    background-color: $fondo !important;
+    color: $secundario !important;
+  }
+}
+
+//--------------------------
+// COPYRIGHT
+//--------------------------
+
+#copyright {
+  .banner-copy {
+    height: 90px;
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    display: flex !important;
+    align-items: center !important;
+  }
+  @media only screen and (max-width: 575px) {
+    .banner-copy {
+      height: 90px;
+    }
+  }
+}
+
+//--------------------------
+// FOOTER
+//--------------------------
+
+#footer {
+  ul li.hg::before {
+    content: "";
+    background-image: url("../img/lista.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+    margin-right: 0.5rem;
+  }
+}
+
+//--------------------------
+// FLOTANTES
+//--------------------------
+
+#flotantes {
+  .flotante {
+    position: fixed;
+    left: 95%;
+    top: 70%;
+    z-index: 9999;
+    transform: translate(0px, -50%);
+  }
+
+  .logo-flotante {
+    border-radius: 15px;
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0.2rem 0.3rem;
+  }
+
+  .cuadro {
+    width: 75%;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: bold;
+    border: none;
+    padding: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .cuadro:hover {
+    background-color: $acento;
+    color: $texto;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .flotante {
+      left: 85%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .flotante {
+      left: 80%;
+    }
+  }
+}
+
+//--------------------------
+// CAROUSEL
+//--------------------------
+
+#carrousel {
+  .hero {
+    position: relative;
+  }
+  .img-hero {
+    width: 100%;
+    height: 65vh;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .bg-caja {
+    background-color: rgba($secundario, 0.4);
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    padding: 1rem 2rem;
+    color: $primario;
+    position: absolute;
+    bottom: 15%;
+    left: 25%;
+    right: 0%;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-height: X; /* fallback */
+    max-height: calc(x * 1); /* fallback */
+  }
+
+  h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-height: X; /* fallback */
+    max-height: calc(x * 3); /* fallback */
+  }
+
+  h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-height: X; /* fallback */
+    max-height: calc(x * 2); /* fallback */
+  }
+
+  @media only screen and (max-width: 768px) {
+    .bg-caja {
+      bottom: 10%;
+      left: 0%;
+      right: 0%;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cuadro {
+      filter: opacity(0.8) !important;
+      width: 100% !important;
+    }
+
+    h3 {
+      -webkit-line-clamp: 1; /* number of lines to show */
+      max-height: calc(x * 1); /* fallback */
+    }
+
+    h1 {
+      -webkit-line-clamp: 2; /* number of lines to show */
+      max-height: calc(x * 2); /* fallback */
+    }
+
+    h4 {
+      -webkit-line-clamp: 1; /* number of lines to show */
+      max-height: calc(x * 1); /* fallback */
+    }
+  }
+
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+
+  .carousel .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: $acento-sombra;
+    margin-inline: 7px;
+  }
+
+  .line-down {
+    position: absolute;
+    bottom: -75px;
+  }
+  margin-bottom: 100px;
+}
+
+//--------------------------
+// ABOUT US
+//--------------------------
+
+#about {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+}
+
+//--------------------------
+// CTA1
+//--------------------------
+
+#cta1 {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+  .skewed {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transform: skewY(3deg);
+    transform-origin: top right;
+  }
+
+  .nos {
+    transform: skewY(-3deg);
+  }
+  .cuadro {
+    width: 75%;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: bold;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .cuadro:hover {
+    background-color: $acento;
+    color: $texto;
+  }
+}
+
+//--------------------------
+// MARCAS
+//--------------------------
+
+#marcas {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+  .img-fluid {
+    padding: 3rem 0rem;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+
+  .borde-derecho-md {
+    border-right: 1px solid rgba($texto, 0.2);
+  }
+
+  .borde-bajo-md {
+    border-bottom: none;
+  }
+
+  .borde-derecho-sm {
+    border-right: 1px solid rgba($texto, 0.2);
+  }
+  .borde-bajo-sm {
+    border-bottom: 1px solid rgba($texto, 0.2);
+  }
+  .borde-bajo {
+    border-bottom: 1px solid rgba($texto, 0.2);
+  }
+
+  @media only screen and (max-width: 767px) {
+    .borde-derecho-md {
+      border-right: none;
+    }
+    .borde-bajo-sm {
+      border-bottom: 1px solid rgba($texto, 0.2);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .borde-bajo {
+      border-bottom: none;
+    }
+  }
+}
+
+//--------------------------
+// BANNER
+//--------------------------
+
+#banner {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+}
+
+//--------------------------
+// BANNER-LG
+//--------------------------
+
+#banner-lg {
+  .fill {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    height: 40vh;
+  }
+  .columna-lg {
+    background-color: $acento;
+    border: none;
+    color: $primario;
+    cursor: default;
+  }
+
+  .cl1 {
+    flex: 0 0 100%; /* <-- adjusting for margin */
+  }
+
+  .cl2 {
+    flex: 0 0 50%; /* <-- adjusting for margin */
+  }
+  .cl3 {
+    flex: 0 0 33.33%; /* <-- adjusting for margin */
+  }
+
+  .cl4 {
+    flex: 0 0 25%; /* <-- adjusting for margin */
+  }
+  .cl5 {
+    flex: 0 0 20%; /* <-- adjusting for margin */
+  }
+
+  .columna-lg:hover,
+  .columna-lg:focus,
+  .columna-lg:active,
+  .columna-lg:active,
+  .columna-lg:focus-visible {
+    background-color: $acento-sombra !important;
+    border: none;
+    color: $primario;
+    box-shadow: 0 0 0 0rem transparent !important;
+    z-index: 0;
+  }
+  @media only screen and (max-width: 768px) {
+    .columna-lg, .fill {
+      display: none;
+    }
+  }
+
+  a {
+    color: $primario !important;
+  }
+
+  h5.derecha::after {
+    content: "";
+    background-image: url("../img/flecha.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.3rem;
+  }
+}
+
+//--------------------------
+// BANNER-SM
+//--------------------------
+
+#banner-sm {
+  .columna-sm {
+    display: none;
+    background-color: $acento;
+    border: none;
+    height: 25vh;
+    color: $primario;
+    cursor: default;
+    z-index: 0 !important;
+    width: 100%;
+  }
+
+  .columna-sm:hover,
+  .columna-sm:focus,
+  .columna-sm:active,
+  .columna-sm:active,
+  .columna-sm:focus-visible {
+    background-color: $acento-sombra !important;
+    border: none;
+    color: $primario;
+    box-shadow: 0 0 0 0rem transparent !important;
+    z-index: 0 !important;
+  }
+  @media only screen and (max-width: 768px) {
+    .columna-sm {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .columna-sm {
+      height: 50vh;
+    }
+  }
+
+  a {
+    color: $primario !important;
+  }
+
+  h5.derecha::after {
+    content: "";
+    background-image: url("../img/flecha.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.3rem;
+  }
+}
+
+//--------------------------
+// FAQS
+//--------------------------
+
+#faqs {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+  .btn:hover,
+  .btn:focus,
+  .btn:active,
+  .btn:focus-visible {
+    box-shadow: 0 0 0 0rem transparent !important;
+  }
+
+  h4.faq::before {
+    content: "";
+    background-image: url("../img/more.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.3rem;
+    margin-right: 0.1rem;
+  }
+
+  h4.faq-list::before {
+    content: "";
+    background-image: url("../img/lista.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+    margin-right: 0.5rem;
+  }
+
+  h5.faq::before {
+    content: "";
+    background-image: url("../img/less.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.3rem;
+    margin-right: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 5px;
+  }
+
+  li {
+    margin-top: 0.5rem;
+  }
+}
+
+//--------------------------
+// TESTIMONIALS
+//--------------------------
+
+#testimonials {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+
+  .testimonios {
+    border-radius: 90px 0px 90px 0px;
+    height: 425px;
+  }
+
+  .carousel-control-next-icon {
+    background-image: url("../img/next.png") !important;
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url("../img/prev.png") !important;
+  }
+
+  .carousel .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: $acento-sombra;
+    margin-inline: 7px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .testimonios {
+      height: auto;
+    }
+  }
+}
+
+//--------------------------
+// CAROUSEL - CREDITOS
+//--------------------------
+
+#carrousel-creditos {
+  .hero {
+    position: relative;
+  }
+
+    .img-hero {
+        width: 100%;
+        height:90vh;
+        object-position: center;
+        object-fit: cover;
+        filter: hue-rotate(380deg) brightness(50%);
+    }
+
+  .bg-caja {
+    background-color: rgba($secundario, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    padding: 1rem 3rem;
+    color: $primario;
+    position: absolute;
+    bottom: 15%;
+    left: 0%;
+    right: 0%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+
+    .bg-caja {
+      padding: 0.5rem 0.5rem;
+    }
+  }
+
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+
+  .carousel .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: $acento-sombra;
+    margin-inline: 7px;
+  }
+
+  .line-down {
+    position: absolute;
+    bottom: -75px;
+  }
+  margin-bottom: 100px;
+}
+
+//--------------------------
+// HEADER - SEGUROS
+//--------------------------
+
+#header-seguros {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+}
+
+//--------------------------
+// CARD
+//--------------------------
+
+#card {
+  .bg-card {
+    color: $primario;
+    border: none;
+    -webkit-animation: bg 1s ease 0s 1;
+    animation: bg 1s ease 0s 1;
+    animation-fill-mode: forwards;
+  }
+  .card {
+    border: none;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+
+  .bg-card:hover {
+    cursor: pointer;
+  }
+  .imagen-card {
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+  }
+}
+
+//--------------------------
+// DESCRIPTION
+//--------------------------
+
+#description {
+  .bg-card {
+    color: $primario;
+    border: none;
+    -webkit-animation: bg 1s ease 0s 1;
+    animation: bg 1s ease 0s 1;
+    animation-fill-mode: forwards;
+  }
+  .imagen-description {
+    width: 100%;
+    height: 475px;
+    margin: 0 auto;
+  }
+  .imagen-logo {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+  }
+
+  a, i {
+    color: $acento!important;
+  }
+}
+
+//--------------------------
+// AVATAR
+//--------------------------
+
+#avatarList {
+  h3.marca::before {
+    content: "";
+    background-image: url("../img/marca.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0.1rem;
+  }
+  .card {
+    border-radius: 50% !important;
+    width: 80px !important;
+  }
+  .espacio {
+    width: 2.5rem !important;
+  }
+}
+
+//--------------------------
+// CARD
+//--------------------------
+
+#card-cover {
+  .imagen-portada {
+    height: 45vh;
+    width: 100%;
+  }
+
+  .flotante {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 45%;
+    transform: translate(0px, -50%);
+    text-align: center;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    width: 300px !important;
+    height: 300px !important;
+    margin: 0.2rem 0.3rem;
+  }
+
+  .card {
+    border-radius: 50% !important;
+    width: 80px !important;
+  }
+  .absolute {
+    height: 160px;
+  }
+  .tarjeta {
+    text-align: center;
+    padding: 0rem 15rem;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .tarjeta {
+      padding: 0rem 10rem;
+    }
+    .imagen-portada {
+      height: 30vh;
+    }
+    .flotante {
+      top: 30%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .tarjeta {
+      padding: 0rem 10rem;
+    }
+    .imagen-portada {
+      height: 40vh;
+    }
+    .flotante {
+      top: 40%;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .tarjeta {
+      padding: 0rem 1rem;
+    }
+
+    .imagen-portada {
+      height: 35vh;
+    }
+    .flotante {
+      top: 35%;
+    }
+    .avatar {
+      border-radius: 10px;
+      border: 5px solid $primario;
+      width: 150px !important;
+      height: 150px !important;
+    }
+    .absolute {
+      height: 80px;
+    }
+  }
+}
+
+#card-utilities {
+  #lista1 li {
+    display: inline;
+  }
+  img:hover {
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .img-accionadores {
+      width: 60px;
+      height: auto;
+    }
+  }
+}
