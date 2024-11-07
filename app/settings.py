@@ -34,6 +34,8 @@ else:
 
     ALLOWED_HOSTS = [environ['HOST'], ]
 
+SECURE_SSL_REDIRECT=False
+
 
 # Application definition
 
