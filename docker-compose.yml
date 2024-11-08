@@ -8,7 +8,7 @@ services:
         - POSTGRES_USER=appherrera
         - POSTGRES_PASSWORD=appherrerapass
         - POSTGRES_DB=appherreradb
-      expose: 
+      expose:
         - 5432
   appherreraweb:
       container_name: appherreraweb
@@ -17,7 +17,7 @@ services:
       volumes:
         - .:/app
       expose:
-        - '8000'
+        - 8000
       env_file:
         - '.env'
       depends_on:
@@ -26,7 +26,5 @@ services:
         container_name: web_nginx
         build: ./nginx
         ports:
-            - '80:80'
-            - '443:443'
-        depends_on:
-            - appherreraweb
+            - 80:80
+            - 443:443
