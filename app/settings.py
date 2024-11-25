@@ -30,13 +30,14 @@ DEBUG = True if environ['DEBUG'] == 'True' else False
 if DEBUG: 
     ALLOWED_HOSTS = [environ['HOST'],]
 
+
 else:
 
     ALLOWED_HOSTS = [environ['HOST'], ]
 
 SECURE_SSL_REDIRECT=False
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
-
+CSRF_TRUSTED_ORIGINS = [environ['CSRF_ORIGINS'], ]
 
 # Application definition
 
@@ -159,6 +160,7 @@ if DEBUG:
         BASE_DIR /'staticfiles'
     ]
     MEDIA_ROOT= BASE_DIR / 'media'
+    STATIC_ROOT= BASE_DIR / 'static'
 else:
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
