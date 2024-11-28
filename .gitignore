@@ -5,7 +5,7 @@
 *.jpeg
 *.pyc
 .DS_Store
-
+*nginx/nginx.conf
 
 .env
 .ds_store

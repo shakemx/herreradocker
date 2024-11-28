@@ -64,7 +64,7 @@
                         {% regroup products by category.type as type_list %}
                         {% for type in type_list  %}       
                         <div class="my-2">
-                            <a href="#" target="_blank">
+                            <a href="{% url 'insurance' slug_type=type.grouper.slug_type %}" target="_blank">
                                 <h5 class="color-texto d-inline ms-3"> {{ type.grouper }}</h5>
                             </a>
                         </div>
@@ -78,22 +78,22 @@
                         <h5 class="color-texto">
                             <ul>
                                 <li class="hg">
-                                    Inicio
+                                    <a class="color-texto" href="{% url 'home'  %}">Inicio</a>
                                 </li>
                                 <li class="hg">
-                                    Nosotros
+                                    <a class="color-texto" href="{% url 'home'  %}#about">Nosotros</a>
                                 </li>
                                 <li class="hg">
-                                    Alianzas
+                                    <a class="color-texto"  href="{% url 'home'  %}#marcas">Alianzas</a>
                                 </li>
                                 <li class="hg">
-                                    Favoritos
+                                    <a class="color-texto" href="{% url 'home'  %}#banner">Favoritos</a>
                                 </li>
                                 <li class="hg">
-                                    Preguntas Frecuentes
+                                    <a class="color-texto" href="{% url 'home'  %}#faqs">Preguntas Frecuentes</a>
                                 </li>
                                 <li class="hg">
-                                    Testimonios
+                                    <a class="color-texto" href="{% url 'home'  %}#testimonials">Testimonios</a>
                                 </li>
                                 <li class="hg">
                                     Agentes
