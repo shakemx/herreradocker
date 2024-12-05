@@ -27,7 +27,4 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^admin\/?', admin.site.urls),
-    path('', include('web.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+   
