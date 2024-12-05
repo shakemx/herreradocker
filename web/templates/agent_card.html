@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+<!--SEO-->
+{% block title %}Agente{% endblock title %}
+{% block description %}{{agent.name}}{% endblock description %}
+{% block titleop %}Agente{% endblock titleop %}
+{% block description_op %}{{agent.name}}{% endblock description_op %}
+{% block image_op %}{% static 'img/favicon.png' %}{% endblock image_op %}
+{% block favicon %}{% static 'img/favicon.png' %}{% endblock favicon%}
+<!--Body-->
+{% block main_body_data %}
+    <!----------------START HOMME---------------------->
+    {% include "agent_cover.html" %}
+    {% include "agent_favs.html" %}
+    {% include "agent_company.html" %}
+    {% include "agent_services.html" %}
+    {% include "agent_calls.html" %}
+    {% include "agent_utilities.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% include "modal-user.html" %}
+    {% include "modal-map.ht

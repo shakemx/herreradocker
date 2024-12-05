@@ -1,0 +1,20 @@
+{% load static %}
+<section id="card-cover">    
+    <div class="container">
+        <img src="{{MEDIA_URL}}{{list_agent.cover}}" alt="{{list_agent.role}}" class="img-cover">
+        <div class="card-bg-up ">
+            <div class="photo-position">
+                <img class="photo-img" src={{MEDIA_URL}}{{list_agent.photo}} alt="{{list_agent.name}}">
+            </div>
+        </div>
+        <div class="container card-bg-down bg-primario">
+            <div class="row">
+                <div class="col">
+                    <h2 class="color-acento">{{list_agent.name}}</h2>
+                    <h5>{{list_agent.role}}</h5>
+                    <p>{{list_agent.bio}}</p>
+                </div>
+            </div>
+        </div>
+    </div>   
+</section>

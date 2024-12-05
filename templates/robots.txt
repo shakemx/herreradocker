@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /agente/
+Disallow: https://herrera-garcia.com/admin
+
+User-agent: *
+Allow: /
+
+Sitemap: https://herrera-garcia.com/sitemap.xml

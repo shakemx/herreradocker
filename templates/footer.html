@@ -95,9 +95,9 @@
                                 <li class="hg">
                                     <a class="color-texto" href="{% url 'home'  %}#testimonials">Testimonios</a>
                                 </li>
-                                <li class="hg">
-                                    Agentes
-                                </li>
+                                {% if agents %}
+                                <li class="color-texto"><a href="{% url 'agent'  %}">Agentes</a></li>
+                                {% endif %}
                             </ul>
                         </h5>
                     </div>

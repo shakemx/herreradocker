@@ -8,3 +8,6 @@ django-debug-toolbar==3.2.4
 boto3==1.18.63
 django-storages==1.13.2
 django-autoslug==1.9.8
+django-qr-code==3.1.1   
+vobject==0.9.6
+requests==2.31.0

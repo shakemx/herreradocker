@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+<!--SEO-->
+{% block title %}Agentes{% endblock title %}
+{% block description %}Conoce a nuestros expertos{% endblock description %}
+{% block titleop %}Agentes{% endblock titleop %}
+{% block description_op %}Conoce a nuestros expertos{% endblock description_op %}
+{% block image_op %}{% static 'img/favicon.png' %}{% endblock image_op %}
+{% block favicon %}{% static 'img/favicon.png' %}{% endblock favicon%}
+<!--Body-->
+{% block main_body_data %}
+    {% include "navbar.html" %}
+    <!----------------START HOMME---------------------->
+    {% include "list_agents.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% include "cta1.html" %}
+    <!----------------END HOME---------------------->
+    {% include "flotantes.html" %}
+    {% include "footer.html" %}
+    {% include "copyright.html" %}
+{% endblock %}
+
+
+<!--JS-->
+{% block child_js_above_files %} 
+{% endblock %}
+
+{% block child_js_belo

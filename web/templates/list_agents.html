@@ -1,0 +1,25 @@
+{% load static %}
+
+<!-- ABOUT -->
+<section id="avatarList">
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3>Equipo Herrera - García</h3>
+                <h1>Nos encanta ayudarte</h1>
+            </div>
+        </div>
+        {% if agents %}
+        <div class="row mt-3 flex-row">
+            {% for agent in agents %}
+            <div class="col-3 col-md-2">
+                 <img src="{{agent.photo.url}}" alt="{{agent.name}}" class="img-avatar">
+            </div>
+            <div class="col-6 col-md-4 mt-4">
+                <h5>{{agent.name}}</h5>
+            </div>
+            <div class="d-none d-md-block col-md-4 mt-4">
+                <a href="mailto:{{agent.mail}}" target="_blank">
+                    <h5 class="mail">{{agent.mail}}</h5>
+                </a>
+            </div

@@ -48,12 +48,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'django_user_agents',
     'base',
     'insurance',
     'agents',
     'web',
     'entities',
+    'qr_code'
 ]
 
 MIDDLEWARE = [

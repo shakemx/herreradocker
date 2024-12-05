@@ -1,0 +1,21 @@
+{% load static %}{% load qr_code %}
+<div class="modal fade" id="modal-share" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">         
+                <div class="col-12 text-center py-3">
+                    <a href="https://api.whatsapp.com/send?text=https://herrera-garcia.com/agente/{{list_agent.slug_agente}}" target="_blank"><i class="fa-brands fa-whatsapp  icon"></i></a>
+                    <br>
+                    <br>
+                    <h2 class="livvic">Whatsapp</h2>
+                </div>                
+                <div class="col-12 text-center py-3">
+                    {% qr_from_text qr_user size="t" image_format="png" error_correction="L" %}
+                    <br>
+                    <br>
+                    <h2 class="livvic">QR-Code</h2>
+                </div>         
+        </div>
+      </div>
+    </div>
+  </div>

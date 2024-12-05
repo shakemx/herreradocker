@@ -48,7 +48,9 @@
                     <li class="nav-item pt-3"><a class="nav-link" href="{% url 'home'  %}#banner">Favoritos</a></li>
                     <li class="nav-item pt-3"><a class="nav-link" href="{% url 'home'  %}#faqs">Preguntas Frecuentes</a></li>
                     <li class="nav-item pt-3"><a class="nav-link" href="{% url 'home'  %}#testimonials">Testimonios</a></li>
-                    <li class="nav-item pt-3"><a class="nav-link" href="#">Agentes</a></li>
+                    {% if agents %}
+                    <li class="nav-item pt-3"><a class="nav-link" href="{% url 'agent'  %}">Agentes</a></li>
+                    {% endif %}
                     <li class="nav-item pt-3 dropdown">
                         <a class="nav-link dropdown-toggle" class="nav-link"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Portafolio
@@ -87,9 +89,4 @@
             <a href="#offcanvasSeguros" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasSeguros" aria-expanded="false"><span class="color-secundario">Portafolio<i class="fa-solid fa-caret-down fa-sm espacio" style="color: #3da9fc;"></i></span></a>
             <a href="{% url 'home' %}">
                  <img src="{% static 'img/isotipo.png' %}" alt="Herrera & García| Consultores Patrimoniales" class="d-inline-block alighn-top navLogo"/>
-            </a>
-        </span>
-    </div>
-</nav>
-         
-</section>  
+     

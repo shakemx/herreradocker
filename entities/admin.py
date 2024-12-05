@@ -1,12 +1,14 @@
 from django.contrib import admin
 from django import forms
 from entities.models import Type, Category, Product
+from agents.models import Agent
 
 
 class TypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_active')
     list_filter = ('name', 'is_active')
     search_fields = ('name', 'is_active')
+    exclude = ('description',)
 
     actions=['activate', 'deactivate']
 
@@ -23,6 +25,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'type', 'is_active')
     list_filter = ('name', 'type', 'is_active')
     search_fields = ('name', 'type', 'is_active')
+    exclude = ('description',)
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'type':
@@ -71,7 +74,11 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryChoiceField(forms.ModelChoiceField):
     def label_from_instance(self, obj):
         return f'{obj.type.name} - {obj.name}'
+    
+class AgentAdmin(admin.ModelAdmin):
+    list_display = ('name','is_active')
 
 admin.site.register(Type, TypeAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Agent, AgentAdmin)

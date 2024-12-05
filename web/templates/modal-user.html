@@ -1,0 +1,79 @@
+{% load static %}{% load qr_code %}
+<div class="modal fade" id="modal-user" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        {% if list_agent.phone %}
+        <div class="row d-flex align-items-center">          
+          <div class="col-2 col-md-4 text-center">
+            <i class="fa-solid fa-phone icon-small"></i>
+          </div>
+          <div class="col-10 col-md-8 text-center">
+            <a href="tel:{{list_agent.phone}}" target="_blank">
+              <h3 class="livvic p-0 pt-3 align-self-center">{{list_agent.phone}}</h3>
+            </a>
+          </div>
+        </div>  
+        {% endif %}
+        {% if list_agent.mobile %}  
+        <div class="row d-flex align-items-center">          
+          <div class="col-2 col-md-4 text-center">
+            <i class="fa-solid fa-mobile icon-small"></i>
+          </div>
+          <div class="col-10 col-md-8 text-center">
+            <a href="tel:{{list_agent.mobile}}" target="_blank">
+            <h3 class="livvic p-0 pt-3 align-self-center">{{list_agent.mobile}}</h3>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+        {% if list_agent.whatsapp %}  
+        <div class="row d-flex align-items-center">          
+          <div class="col-2 col-md-4 text-center">
+            <i class="fa-brands fa-whatsapp icon-small"></i>
+          </div>
+          <div class="col-10 col-md-8 text-center">
+            <a href="https://wa.me/521{{list_agent.whatsapp}}?text=Hola+necesito+informacion" target="_blank">
+              <h3 class="livvic p-0 pt-3 align-self-center">{{list_agent.whatsapp}}</h3>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+        {% if list_agent.mail %}  
+        <div class="row d-flex align-items-center">          
+          <div class="col-2 col-md-4 text-center">
+            <i class="fa-regular fa-envelope icon-small"></i>
+          </div>
+          <div class="col-10 col-md-8 text-center">
+            <a href="mailto:{{list_agent.mail}}" target="_blank">
+              <h3 class="livvic p-0 pt-3 align-self-center">{{list_agent.mail}}</h3>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+        {% if list_agent.web %}
+        <div class="row d-flex align-items-center">          
+          <div class="col-2 col-md-4 text-center">
+            <i class="fa-brands fa-chrome icon-small"></i>
+          </div>
+          <div class="col-10 col-md-8 text-center">
+            <a href="{{list_agent.web}}" target="_blank">
+              <h3 class="livvic p-0 pt-3 align-self-center">{{list_agent.web}}</h3>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+        {% if list_agent.schedule %}
+        <div class="row d-flex align-items-center">          
+          <div class="col-2 col-md-4 text-center">
+            <i class="fa-regular fa-clock icon-small"></i>
+          </div>
+          <div class="col-10 col-md-8 text-center">
+              <h3 class="livvic p-0 pt-3 align-self-center">{{list_agent.schedule}}</h3>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

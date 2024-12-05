@@ -1,0 +1,32 @@
+{% load static %}{% load qr_code %}
+<div class="modal fade" id="modal-map" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row d-flex align-items-center py-3">
+          <div class="col-12 text-center">
+            <i class="fa-regular fa-building icon-small"></i>
+          </div>
+          <div class="col-12 text-center">
+            <h3 class="livvic p-0 pt-3 align-self-center">CDMX</h3>
+          </div>
+          {% if list_agent.schedule %}
+          <div class="row d-flex align-items-center py-3">
+            <div class="col-12 text-center">
+              <i class="fa-regular fa-clock icon-small"></i>
+            </div>
+            <div class="col-12 text-center">
+              <h3 class="livvic p-0 pt-3 align-self-center">{{list_agent.schedule}}</h3>
+            </div>
+          </div>
+          {% endif %}          
+        </div>
+        <!-- <div class="row d-flex align-items-center">
+          <div class="text-center">
+            <a  target="_blank" href="" type="button"><strong>Como llegar</strong></a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
