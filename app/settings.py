@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'agents',
     'web',
     'entities',
-    'qr_code'
+    'qr_code',
 ]
 
 MIDDLEWARE = [
@@ -175,4 +175,4 @@ else:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-INTERNAL_IPS = type(str('c
+INTERNAL_IPS = type(str('c'), (), {'__contains__': lambda *a: True})()

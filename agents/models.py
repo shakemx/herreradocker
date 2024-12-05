@@ -25,3 +25,15 @@ class Agent(BaseModel):
     cover = models.ImageField('Foto de Portada', blank=True)
     role = models.CharField('Puesto/Rol', max_length=50, blank=True)
     bio = models.TextField('Biografía', max_length=500, blank=True)
+    slug_agent = AutoSlugField(populate_from='name', unique=True, always_update=False)
+
+
+    class Meta:
+        verbose_name = 'Agente'
+        verbose_name_plural = 'Agentes'
+    
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse('agent', kwargs={'slug_agent': self.slug_agent})

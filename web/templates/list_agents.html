@@ -22,4 +22,21 @@
                 <a href="mailto:{{agent.mail}}" target="_blank">
                     <h5 class="mail">{{agent.mail}}</h5>
                 </a>
-            </div
+            </div>
+            <div class="col-3 col-md-2 mt-4">
+                <a href="{% url 'agent_card' slug_agent=agent.slug_agent %}">
+                    <i class="fa-solid fa-angle-right fa-xl"></i>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="row mt-5 flex-row">
+            <div class="col-12">
+                <h5 >Nuestro talento está por llegar, vuelve pronto.</h5>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+</section>

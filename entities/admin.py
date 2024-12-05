@@ -80,4 +80,5 @@ class AgentAdmin(admin.ModelAdmin):
 
 admin.site.register(Type, TypeAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Agent, AgentAdmin)

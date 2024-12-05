@@ -6,8 +6,11 @@
 *.pyc
 .DS_Store
 *nginx/nginx.conf
-
+*.conf
+.docker-compose.yml
 .env
 .ds_store
+staticfiles
+media
 
 ```

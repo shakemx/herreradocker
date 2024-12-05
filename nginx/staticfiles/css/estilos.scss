@@ -1016,19 +1016,27 @@ li {
   .espacio {
     width: 2.5rem !important;
   }
+  .img-avatar{
+    border-radius: 50% !important;
+    width: 80px;
+    height: auto;
+  }
+  
+  a, h5 {
+    color: $acento!important;
+  }
+  a, i {
+    color: $acento!important;
+  }
 }
 
-//--------------------------
-// CARD
-//--------------------------
-
-#card-cover {
-  .imagen-portada {
+#card-cover{
+  .img-cover {
     height: 45vh;
     width: 100%;
   }
 
-  .flotante {
+  .photo-position {
     position: absolute;
     right: 0;
     left: 0;
@@ -1037,84 +1045,315 @@ li {
     text-align: center;
   }
 
-  .avatar {
+  .photo-img {
     border-radius: 50%;
     width: 300px !important;
     height: 300px !important;
     margin: 0.2rem 0.3rem;
   }
 
-  .card {
-    border-radius: 50% !important;
-    width: 80px !important;
+  .card{
+    border-radius: 50%!important;
+    width: 80px!important;
   }
-  .absolute {
+  .card-bg-up {
     height: 160px;
+    background-color: $primario;
   }
-  .tarjeta {
+  .card-bg-down {
     text-align: center;
     padding: 0rem 15rem;
+    background-color: $primario;
   }
 
-  @media only screen and (max-width: 992px) {
-    .tarjeta {
-      padding: 0rem 10rem;
-    }
-    .imagen-portada {
-      height: 30vh;
-    }
-    .flotante {
-      top: 30%;
-    }
-  }
 
+@media only screen and (max-width: 992px) {
+  .img-cover {
+    height: 30vh;
+  }
+  .card-bg-down {
+    padding: 0rem 10rem;
+  }
+  .photo-position {
+    top: 30%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .img-cover {
+    height: 40vh;
+  }
+  .photo-position {
+    top: 40%;
+  }
+  .card-bg-down {
+    padding: 0rem 10rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .img-cover {
+    height: 20vh;
+  }    
+  .photo-position {
+    top: 20%;
+  }
+  .photo-img {
+    border-radius: 100px;
+    border: 5px solid $primario;
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .card-bg-up {
+    height: 80px;
+  }
+  .card-bg-down {
+    padding: 0rem 1rem;
+  }  
+}
+
+}
+
+#card-favs{
+  height: 100%;
+  #list-fav li{
+    display: inline-block;
+  }
+  .wall-favs{
+    padding: 10px 0 ;
+    overflow-x: scroll;
+  }
+  i {
+    font-size: 65px!important;
+    color: $acento!important;
+    margin: 0 10px;
+  }
+  i:hover {
+    cursor: pointer;
+  }
   @media only screen and (max-width: 768px) {
-    .tarjeta {
-      padding: 0rem 10rem;
-    }
-    .imagen-portada {
-      height: 40vh;
-    }
-    .flotante {
-      top: 40%;
-    }
-  }
 
-  @media only screen and (max-width: 576px) {
-    .tarjeta {
-      padding: 0rem 1rem;
-    }
-
-    .imagen-portada {
-      height: 35vh;
-    }
-    .flotante {
-      top: 35%;
-    }
-    .avatar {
-      border-radius: 10px;
-      border: 5px solid $primario;
-      width: 150px !important;
-      height: 150px !important;
-    }
-    .absolute {
-      height: 80px;
+    i{
+      font-size: 35px!important;
     }
   }
 }
 
-#card-utilities {
-  #lista1 li {
-    display: inline;
+
+#card-company{
+  .bg-card{
+    background-color: $secundario;
+    height: 350px;
   }
-  img:hover {
+  .img-logo{
+    width: 300px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  li{
+    background-color: $secundario;
+    text-align: center;
+    border-radius: 15px;    
+  }
+  i {
+    font-size: 45px!important;
+    color: $fondo!important;
+    margin:  5px 5px;
+    width: 55px!important;
+  }
+  i:hover {
     cursor: pointer;
   }
+ 
+  @media only screen and (max-width: 576px) {
+    .bg-card{
+      height: 200px;
+    }
+    .img-logo{
+      width: 100px;
+    }    
+    li{
+      border-radius: 10px;
+    }
+    i {
+      font-size: 25px!important;
+      color: $fondo!important;
+      margin:  5px 5px;
+      max-width: 30px!important;
+    }
+   
+  }
+ 
+}
 
-  @media only screen and (max-width: 768px) {
-    .img-accionadores {
+#card-banner{
+  .banner{
+    position: relative;
+  }
+  .img-banner{
+    height: 300px;
+    width: 100%;
+    filter: opacity( 50%);
+    -webkit-filter: opacity(50%);
+  }
+  .slogan{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    bottom:50%;
+    text-align: center;
+    color: $primario;
+  }  
+
+  @media only screen and (max-width: 992px) {
+    .img-banner {
+    height: 150px;        
+    }
+    .slogan{
+    top: 20%;
+   }
+  }
+}
+
+#card-services{
+  .box {
+    background-color: $acento;
+    height: 150px; 
+  }
+  .btn-primary{
+    border: none;
+    height: 150px;
+    vertical-align: middle;
+    background-color: $acento;
+    display: flex;
+    align-items: center;
+  }
+  .btn-primary:focus{
+    box-shadow: none;
+    filter: brightness(.95);
+    --webkit-filter: brightness(.95);
+    
+  }
+  .service-box, i{
+    text-align: center;
+    color: $primario;   
+  }
+  .service-detail{
+    text-align: center;
+  }
+  .more{
+    color: $primario;
+  }
+  .icon-services {
+    font-size: 35px!important;
+    color: $primario!important;
+    margin:  5px 5px;
+  }  
+  @media only screen and (max-width: 992px) {
+    h3{
+      font-size: 1.4rem;
+    }
+    .icon-services {
+      font-size: 20px!important;
+      margin:  2px;
+    }  
+
+   }
+   
+ }
+
+  #card-call{
+    
+    .banner-call{
+      text-align: center; 
+    }
+    .company-call{
+      background-color: $secundario;
+      color: $primario;   
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      transition: all 0.5s ease-in-out;
+      font-family: "LeagueSpartan-VariableFont_wght";
+      transition: all 0.5s ease-in-out; 
+    }
+    .company-call:hover{
+      opacity: 0.8;
+      transition: all 0.5s ease-in-out;
+    }
+    a{
+      color: $primario!important;
+    }
+  }
+
+  #card-utilities{
+    .fix-bottom{
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0%;
+      right: 0%;
+      background-color: $secundario;
+      padding: 5px;
+    }
+    .img-utilities{
       width: 60px;
       height: auto;
     }
+    .img-utilities:hover{
+      cursor: pointer;
+    }
+    .icon-utility {
+      font-size: 3rem!important;
+      color: $primario!important;
+    }
+    .icon-utility:hover {
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .img-utilities {
+        width: 40px;
+        height: auto;
+      }
+      .icon-utility {
+        font-size: 2rem!important;
+        color: $primario!important;
+      }
+    }
   }
-}
+
+
+  //------------------------------
+  // MODAL UTILITIES
+  //------------------------------
+
+  #modal-share, #modal-user, #modal-map, #modal-download, #modal-favs{
+    .modal-content{
+      border: none!important;
+      border-radius: 15px!important;
+      border-color: transparent!important;
+      background-color: $secundario!important;
+      height: 100%;
+    }  
+    .modal-body{
+    background-color: $secundario!important;
+    border-radius: 15px!important;
+    border-color: transparent!important;
+    color: $primario!important;
+    height: 100%;
+    }
+    .icon{
+      color: $primario!important;
+      font-size: 75px;
+    }
+    .icon-small{
+      color: $primario!important;
+      font-size: 40px;
+    }
+    a,h3,h2{
+      color: $primario!important;
+    }
+  }
