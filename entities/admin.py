@@ -8,7 +8,6 @@ class TypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_active')
     list_filter = ('name', 'is_active')
     search_fields = ('name', 'is_active')
-    exclude = ('description',)
 
     actions=['activate', 'deactivate']
 
@@ -25,7 +24,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'type', 'is_active')
     list_filter = ('name', 'type', 'is_active')
     search_fields = ('name', 'type', 'is_active')
-    exclude = ('description',)
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'type':

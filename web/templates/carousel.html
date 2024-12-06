@@ -11,22 +11,23 @@
          {% endfor %}
       </div>
       <div class="carousel-inner"> 
-         {% for product in products  %}    
+         {% regroup products by category.type as type_list %}
+         {% for type in type_list  %}    
          <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
             <!-- IMAGEN HERO--> 
             <div class="container-fluid">
                <div class="row">
                   <div class="col-12 p-0  hero">
-                     <img src="{{ product.category.type.cover }}" alt="{{ product.category.type.name }}"
+                     <img src="{{ type.grouper.cover }}" alt="{{ type.grouper.name }}"
                         class="img-hero">
                   </div>
                   <div class="bg-caja">
-                        <h3 class="marca">{{ product.category.type.name }}</h3>
-                        <h1>{{product.category.type.lead}} </h1>
+                        <h3 class="marca">{{ type.grouper.name }}</h3>
+                        <h1>{{type.grouper.lead}} </h1>
                         <h4 class="d-none d-sm-block">
-                           {{product.category.type.description}}
+                           {{type.grouper.description}}
                         </h4>
-                        <a href="{% url 'insurance' slug_type=product.category.type.slug_type %}">
+                        <a href="{% url 'insurance' slug_type=type.grouper.slug_type %}">
                            <button class="color-primario bg-acento cuadro">
                               Leer más...
                            </button>

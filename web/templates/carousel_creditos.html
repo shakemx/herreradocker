@@ -4,27 +4,27 @@
 <section id="carrousel-creditos">
    <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carouselHero">
       <div class="carousel-indicators line-down">
-         {% for cat in productsInsurance  %}    
+         {% for cat in categoriesInsurance %}    
          <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="{{forloop.counter0}}" {% if forloop.counter0 == 0 %}class="active" aria-current="true"{% endif %} aria-label="Slide {{forloop.counter0}}"></button>
          {% endfor %}
       </div>
       <div class="carousel-inner">
-         {% for cat in productsInsurance  %}    
+         {% for cat in categoriesInsurance  %}    
          <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
             <!-- IMAGEN HERO-->
             <div class="container-fluid">
                <div class="row">
                   <div class="col-12 p-0 hero">
-                     <img src="{{MEDIA_URL}}{{cat.category.cover}}" alt="{{cat.category.name}}"
+                     <img src="{{MEDIA_URL}}{{cat.cover}}" alt="{{cat.name}}"
                         class="img-hero">
                   </div>
                   <div class="bg-caja text-center">
-                     <h3 class="marca">{{cat.category.name}} </h3>
-                     <h1>{{cat.category.lead}}</h1>
+                     <h3 class="marca">{{cat.name}} </h3>
+                     <h1>{{cat.lead}}</h1>
                      <h4 class="d-none d-sm-block">
-                        {{cat.category.description}}
+                        {{cat.description}}
                      </h4>
-                     <a href="{% url 'insurances' slug_type=cat.category.type.slug_type slug_category=cat.category.slug_category %}#card">
+                     <a href="{% url 'insurances' slug_type=cat.type.slug_type slug_category=cat.slug_category %}#card">
                         <button class="color-primario bg-acento cuadro w-50">
                            Ver productos
                         </button>
