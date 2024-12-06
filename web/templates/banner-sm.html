@@ -6,11 +6,10 @@
     <div class="btn-group-vertical w-100" role="group" aria-label="Seguros Favoritos">
         {% for fav in favs %}
         <button class="columna-sm">
-            <i class="fa-solid fa-piggy-bank fa-6x" style="color: #fffffe;"></i>
             <br>
             <br>
             <h2>{{fav.name}}</h2>
-            <h3>{{fav.definicion}}</h3>
+            <h3 style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; line-height: X; max-height: calc(x * 2);">{{fav.definicion}}</h3>
             <a href="#">
                 <h5 class="d-inline-block derecha">Lo quiero</h5>
             </a>
